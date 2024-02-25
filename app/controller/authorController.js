@@ -1,9 +1,9 @@
 const Authors = require("../models/Authors");
 
 const getAllAuthors = async (req, res) => {
-  const authors = await Authors.find({});
+  const author = await Authors.find({});
   res.status(200).json({
-    data: authors,
+    data: author,
     success: true,
     message: `${req.method} - request to Author endpoint`,
   });
@@ -24,6 +24,7 @@ const createAuthor = async (req, res) => {
   const newAuthor = await Authors.create(author);
   console.log("data >>>", newAuthor);
   res.status(200).json({
+    data: author,
     success: true,
     message: `${req.method} - request to Author endpoint`,
   });
