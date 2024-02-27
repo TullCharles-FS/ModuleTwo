@@ -29,6 +29,7 @@ const getAllAuthors = async (req, res) => {
 const getAuthorById = async (req, res) => {
   const {id} = req.params;
   try {
+    console.log();
     const author = await Authors.findById(id, req.body, {new: true});
     res.status(200).json({
       data: author,
