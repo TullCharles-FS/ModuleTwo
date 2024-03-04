@@ -18,6 +18,11 @@ const authorsSchema = new mongoose.Schema(
       required: [true, "Please add a description"],
       maxlength: [500, "Description cannot be more than 500 characters"],
     },
+    dataCollections: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "DataCollect",
+    },
+    totalData: Number,
   },
   {timestamps: true}
 );
